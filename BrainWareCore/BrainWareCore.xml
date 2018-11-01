@@ -1,0 +1,824 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BrainWareCore</name>
+    </assembly>
+    <members>
+        <member name="T:BrainWareCore.Configs.SwaggerConfig">
+            <summary>
+            Configuration for Swagger
+            </summary>
+        </member>
+        <member name="M:BrainWareCore.Configs.SwaggerConfig.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            Configures the app to work with Swagger
+            </summary>
+            <param name="app">Application builder</param>
+            <param name="env">Environment details</param>
+        </member>
+        <member name="M:BrainWareCore.Configs.SwaggerConfig.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configures Swagger services
+            </summary>
+            <param name="services">Services for the app</param>
+        </member>
+        <member name="T:BrainWareCore.Constants">
+            <summary>
+            Contains global Constants for the App
+            </summary>
+        </member>
+        <member name="F:BrainWareCore.Constants.InvalidId">
+            <summary>
+            Value for an Invalid EF Id
+            </summary>
+        </member>
+        <member name="F:BrainWareCore.Constants.ASPNetCoreContentRootKey">
+            <summary>
+            Key in the configuration for the Content Root Path
+            </summary>
+        </member>
+        <member name="T:BrainWareCore.Controllers.CompanyController">
+            <summary>
+            Controller for handling Company functionality
+            </summary>
+        </member>
+        <member name="M:BrainWareCore.Controllers.CompanyController.#ctor(BrainWareCore.Services.ICompanyService)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="companyService">Service for handling Company functionality</param>
+        </member>
+        <member name="M:BrainWareCore.Controllers.CompanyController.Post(BrainWareCore.Models.ICompany)">
+            <summary>
+            Creates a new Company
+            </summary>
+            <param name="company">Details of Company to create</param>
+            <returns>The Company created</returns>
+        </member>
+        <member name="M:BrainWareCore.Controllers.CompanyController.Get(System.Int32)">
+             <summary>
+             Retrieves the Company with the specified id
+             </summary>
+             <param name="id">Id of the Company to Retrieve</param>
+             <returns>        
+             If the Company is found then the Company. 
+             If the id of the Company is not valid then (404) Not Found.
+            </returns>
+        </member>
+        <member name="M:BrainWareCore.Controllers.CompanyController.Put(BrainWareCore.Models.ICompany)">
+            <summary>
+            Updates the specified Company
+            </summary>
+            <param name="company">Company to update</param>
+            <returns>
+            If the Company is Updated then the id of the Company. 
+            If the id of the Company is not valid then (404) Not Found.
+            </returns>
+        </member>
+        <member name="M:BrainWareCore.Controllers.CompanyController.Delete(System.Int32)">
+            <summary>
+            Deletes the Company with the specified id
+            </summary>
+            <param name="id">Id of the Company to Delete</param>
+            <returns>
+            If the Company is Deleted then the id of the Company. 
+            If the id of the Company is not valid then (404) Not Found.
+            </returns>
+        </member>
+        <member name="T:BrainWareCore.Controllers.OrderController">
+            <summary>
+            Controller for handling Order functionality
+            </summary>
+        </member>
+        <member name="M:BrainWareCore.Controllers.OrderController.#ctor(BrainWareCore.Services.IOrderService)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="orderService">Service for handling Order functionality</param>
+        </member>
+        <member name="M:BrainWareCore.Controllers.OrderController.Post(BrainWareCore.Models.IOrder)">
+            <summary>
+            Creates a new Order
+            </summary>
+            <param name="order">Details of Order to create</param>
+            <returns>The Order created</returns>
+        </member>
+        <member name="M:BrainWareCore.Controllers.OrderController.Get(System.Int32)">
+             <summary>
+             Retrieves the Order with the specified id
+             </summary>
+             <param name="id">Id of the Order to Retrieve</param>
+             <returns>        
+             If the Order is found then the Order. 
+             If the id of the Order is not valid then (404) Not Found.
+            </returns>    
+        </member>
+        <member name="M:BrainWareCore.Controllers.OrderController.Put(BrainWareCore.Models.IOrder)">
+            <summary>
+            Updates the specified Order
+            </summary>
+            <param name="order">Order to update</param>
+            <returns>
+            If the Order is Updated then the id of the Order. 
+            If the id of the Order is not valid then (404) Not Found.
+            </returns>
+        </member>
+        <member name="M:BrainWareCore.Controllers.OrderController.Delete(System.Int32)">
+            <summary>
+            Deletes the Order with the specified id
+            </summary>
+            <param name="id">Id of the Order to Delete</param>
+            <returns>
+            If the Order is Deleted then the id of the Order. 
+            If the id of the Order is not valid then (404) Not Found.
+            </returns>
+        </member>
+        <member name="T:BrainWareCore.Controllers.OrdersController">
+            <summary>
+            Controller for handling Orders functionality
+            </summary>
+        </member>
+        <member name="M:BrainWareCore.Controllers.OrdersController.#ctor(BrainWareCore.Services.IOrdersService)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="ordersService">Service for handling Orders functionality</param>
+        </member>
+        <member name="M:BrainWareCore.Controllers.OrdersController.ForCompany(System.Int32)">
+            <summary>
+            Returns a list of Orders for the Company id passed
+            </summary>
+            <param name="id">Company Id</param>
+            <returns>List of Orders for the specified Company</returns>
+        </member>
+        <member name="M:BrainWareCore.Controllers.OrdersController.DetailsForCompany(System.Int32)">
+            <summary>
+            Returns a list of Order Details for the Company id passed
+            </summary>
+            <param name="id">Company Id</param>
+            <returns>List of Orders Details for the specified Company. This is a flattened list of Orders.</returns>
+        </member>
+        <member name="T:BrainWareCore.Controllers.ProductController">
+            <summary>
+            Controller for handling Product functionality
+            </summary>
+        </member>
+        <member name="M:BrainWareCore.Controllers.ProductController.#ctor(BrainWareCore.Services.IProductService)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="productService">Service for handling Product functionality</param>
+        </member>
+        <member name="M:BrainWareCore.Controllers.ProductController.Post(BrainWareCore.Models.IProduct)">
+            <summary>
+            Creates a new Product
+            </summary>
+            <param name="product">Details of Product to create</param>
+            <returns>The Product created</returns>
+        </member>
+        <member name="M:BrainWareCore.Controllers.ProductController.Get(System.Int32)">
+             <summary>
+             Retrieves the Product with the specified id
+             </summary>
+             <param name="id">Id of the Product to Retrieve</param>
+             <returns>        
+             If the Product is found then the Product. 
+             If the id of the Product is not valid then (404) Not Found.
+            </returns>
+        </member>
+        <member name="M:BrainWareCore.Controllers.ProductController.Put(BrainWareCore.Models.IProduct)">
+            <summary>
+            Updates the specified Product
+            </summary>
+            <param name="product">Product to update</param>
+            <returns>
+            If the Product is Updated then the id of the Product. 
+            If the id of the Product is not valid then (404) Not Found.
+            </returns>
+        </member>
+        <member name="M:BrainWareCore.Controllers.ProductController.Delete(System.Int32)">
+            <summary>
+            Deletes the Product with the specified id
+            </summary>
+            <param name="id">Id of the Product to Delete</param>
+            <returns>
+            If the Product is Deleted then the id of the Product. 
+            If the id of the Product is not valid then (404) Not Found.
+            </returns>
+        </member>
+        <member name="T:BrainWareCore.Models.Company">
+            <summary>
+            Model representing a Company
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.Company.companyId">
+            <summary>
+            Id of the Company
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.Company.name">
+            <summary>
+            Name of the Company
+            </summary>
+        </member>
+        <member name="T:BrainWareCore.Models.ICompany">
+            <summary>
+            Interface for the Company model
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.ICompany.companyId">
+            <summary>
+            Id of the Company
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.ICompany.name">
+            <summary>
+            Name of the Company
+            </summary>
+        </member>
+        <member name="T:BrainWareCore.Models.IOrder">
+            <summary>
+            Interface for the Order model
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.IOrder.orderId">
+            <summary>
+            Id of the Order
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.IOrder.company">
+            <summary>
+            Company that the Order is for
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.IOrder.description">
+            <summary>
+            Description of the Order
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.IOrder.orderTotal">
+            <summary>
+            Total dollar amount for the order
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.IOrder.orderProducts">
+            <summary>
+            List of OrderProducts attached to the Order
+            </summary>
+        </member>
+        <member name="T:BrainWareCore.Models.IOrderDetails">
+            <summary>
+            Interface for flattened (denormalized) details for one row of an order 
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.IOrderDetails.index">
+            <summary>
+            Arbritrary index for the row position within the set of orders that this OrderDetails is a part of
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.IOrderDetails.companyId">
+            <summary>
+            Company Id that the Order is for
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.IOrderDetails.companyName">
+            <summary>
+            Company Name that the Order is for
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.IOrderDetails.orderId">
+            <summary>
+            Id of the Order
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.IOrderDetails.orderDescription">
+            <summary>
+            Description for the Order
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.IOrderDetails.orderproductQuantity">
+            <summary>
+            Quantity of the specified Product within this Order
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.IOrderDetails.orderproductPrice">
+            <summary>
+            Unit Price of the specified Product within this Order
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.IOrderDetails.orderproductTotalPrice">
+            <summary>
+            Total Price of the specified Product within this Order
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.IOrderDetails.productId">
+            <summary>
+            Id of the specified Product within this Order
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.IOrderDetails.productName">
+            <summary>
+            Name of the specified Product within this Order
+            </summary>
+        </member>
+        <member name="T:BrainWareCore.Models.IOrderProduct">
+            <summary>
+            Interface for the OrderProduct model 
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.IOrderProduct.orderId">
+            <summary>
+            Order Id 
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.IOrderProduct.productId">
+            <summary>
+            Product Id
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.IOrderProduct.quantity">
+            <summary>
+            Quantity of Product for the Order
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.IOrderProduct.price">
+            <summary>
+            Price of the Product for the Order
+            </summary>
+        </member>
+        <member name="T:BrainWareCore.Models.IProduct">
+            <summary>
+            Interface for the Product model
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.IProduct.productId">
+            <summary>
+            Id of the Product
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.IProduct.name">
+            <summary>
+            Name of the the Product
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.IProduct.price">
+            <summary>
+            Current price of the Product
+            </summary>
+        </member>
+        <member name="T:BrainWareCore.Models.Order">
+            <summary>
+            Model representing an Order
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.Order.orderId">
+            <summary>
+            Id of the Order
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.Order.company">
+            <summary>
+            Company that the Order is for
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.Order.description">
+            <summary>
+            Description of the Order
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.Order.orderTotal">
+            <summary>
+            Dollar total for the Order
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.Order.orderProducts">
+            <summary>
+            List of OrderProducts for the Order
+            </summary>
+        </member>
+        <member name="T:BrainWareCore.Models.OrderDetails">
+            <summary>
+            Flattened (denormalized) details for one row of an order 
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.OrderDetails.index">
+            <summary>
+            Arbritrary index for the row position within the set of orders that this OrderDetails is a part of
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.OrderDetails.companyId">
+            <summary>
+            Company Id that the Order is for
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.OrderDetails.companyName">
+            <summary>
+            Company Name that the Order is for
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.OrderDetails.orderId">
+            <summary>
+            Id of the Order
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.OrderDetails.orderDescription">
+            <summary>
+            Description for the Order
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.OrderDetails.orderproductQuantity">
+            <summary>
+            Quantity of the specified Product within this Order
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.OrderDetails.orderproductPrice">
+            <summary>
+            Unit Price of the specified Product within this Order
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.OrderDetails.orderproductTotalPrice">
+            <summary>
+            Total Price of the specified Product within this Order
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.OrderDetails.productId">
+            <summary>
+            Id of the specified Product within this Order
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.OrderDetails.productName">
+            <summary>
+            Name of the specified Product within this Order
+            </summary>
+        </member>
+        <member name="T:BrainWareCore.Models.OrderProduct">
+            <summary>
+            OrderProduct model 
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.OrderProduct.orderId">
+            <summary>
+            Order Id 
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.OrderProduct.productId">
+            <summary>
+            Product Id
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.OrderProduct.quantity">
+            <summary>
+            Quantity of Product for the Order
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.OrderProduct.price">
+            <summary>
+            Price of the Product for the Order
+            </summary>
+        </member>
+        <member name="T:BrainWareCore.Models.Product">
+            <summary>
+            Model representing a Product
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.Product.productId">
+            <summary>
+            Id of the Product
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.Product.name">
+            <summary>
+            Name of the the Product
+            </summary>
+        </member>
+        <member name="P:BrainWareCore.Models.Product.price">
+            <summary>
+            Current price of the Product
+            </summary>
+        </member>
+        <member name="T:BrainWareCore.Services.CompanyService">
+            <summary>
+            Handles operations for the Company entity
+            </summary>
+        </member>
+        <member name="M:BrainWareCore.Services.CompanyService.#ctor(BrainWareCore.Data.BrainWareContext)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="dbContext">EF context for the Company entity</param>
+        </member>
+        <member name="M:BrainWareCore.Services.CompanyService.Create(BrainWareCore.Models.ICompany)">
+            <summary>
+            Creates a new Company.
+            - Adds the Company
+            - Reads the Company by id from EF
+            </summary>
+            <param name="c">Company to create</param>
+            <returns>The Company created</returns>
+        </member>
+        <member name="M:BrainWareCore.Services.CompanyService.Read(System.Int32)">
+            <summary>
+            Reads the Company by id from EF
+            </summary>
+            <param name="id">Id of the Company</param>
+            <returns>The Company if it exists, null if not</returns>
+        </member>
+        <member name="M:BrainWareCore.Services.CompanyService.Update(BrainWareCore.Models.ICompany)">
+            <summary>
+            Updates the Company passed in
+            </summary>
+            <param name="c">Company to update</param>
+            <returns>Id of the Company updated if it exists, Invalid Id if not</returns>
+        </member>
+        <member name="M:BrainWareCore.Services.CompanyService.Delete(System.Int32)">
+            <summary>
+            Deletes the Company specified by the id
+            </summary>
+            <param name="id">Id of the Company to delete</param>
+            <returns>Id of the Company deleted if it exists, Invalid Id if not</returns>
+        </member>
+        <member name="M:BrainWareCore.Services.CompanyService.GetCompanyData(System.Int32)">
+            <summary>
+            Gets the Company from EF for the Company id specified
+            </summary>
+            <param name="id">Id of the Company</param>
+            <returns>EF Company if it exists, null if it does not</returns>
+        </member>
+        <member name="T:BrainWareCore.Services.ICompanyService">
+            <summary>
+            Handles CRUD operations for the Company entity
+            </summary>
+        </member>
+        <member name="M:BrainWareCore.Services.ICompanyService.Create(BrainWareCore.Models.ICompany)">
+            <summary>
+            Create a new Company
+            </summary>
+            <param name="c">Company to Create</param>
+            <returns>Company created</returns>
+        </member>
+        <member name="M:BrainWareCore.Services.ICompanyService.Read(System.Int32)">
+            <summary>
+            Reads an existing Company
+            </summary>
+            <param name="id">Id of the Company</param>
+            <returns>The Company read</returns>
+        </member>
+        <member name="M:BrainWareCore.Services.ICompanyService.Update(BrainWareCore.Models.ICompany)">
+            <summary>
+            Updates an existing Company
+            </summary>
+            <param name="c">Company to Update</param>
+            <returns>Id of the Company Updated</returns>
+        </member>
+        <member name="M:BrainWareCore.Services.ICompanyService.Delete(System.Int32)">
+            <summary>
+            Deletes an Existing Company
+            </summary>
+            <param name="id">Id of the Company to Delete</param>
+            <returns>Id of the Company Deleted</returns>
+        </member>
+        <member name="T:BrainWareCore.Services.IOrderService">
+            <summary>
+            Handles CRUD operations for the Order entity
+            </summary>
+        </member>
+        <member name="M:BrainWareCore.Services.IOrderService.Create(BrainWareCore.Models.IOrder)">
+            <summary>
+            Create a new Order
+            </summary>
+            <param name="o">Order to Create</param>
+            <returns>Order created</returns>
+        </member>
+        <member name="M:BrainWareCore.Services.IOrderService.Read(System.Int32)">
+            <summary>
+            Reads an existing Order
+            </summary>
+            <param name="id">Id of the Order</param>
+            <returns>The Order read</returns>
+        </member>
+        <member name="M:BrainWareCore.Services.IOrderService.Update(BrainWareCore.Models.IOrder)">
+            <summary>
+            Updates an existing Order
+            </summary>
+            <param name="o">Order to Update</param>
+            <returns>Id of the Order Updated</returns>
+        </member>
+        <member name="M:BrainWareCore.Services.IOrderService.Delete(System.Int32)">
+            <summary>
+            Deletes an Existing Order
+            </summary>
+            <param name="id">Id of the Order to Delete</param>
+            <returns>Id of the Order Deleted</returns>
+        </member>
+        <member name="T:BrainWareCore.Services.IOrdersService">
+            <summary>
+            Handles information requests for Orders
+            </summary>
+        </member>
+        <member name="M:BrainWareCore.Services.IOrdersService.GetOrdersByCompany(System.Int32)">
+            <summary>
+            Gets a Heirarchical list of Orders for the specified Company
+            </summary>
+            <param name="id">Company Id</param>
+            <returns>List of Orders</returns>
+        </member>
+        <member name="M:BrainWareCore.Services.IOrdersService.GetOrderDetailsByCompany(System.Int32)">
+            <summary>
+            Gets a Flattened list of Order Details for the specified Company
+            </summary>
+            <param name="id">Company Id</param>
+            <returns>List of Order Details</returns>
+        </member>
+        <member name="T:BrainWareCore.Services.IProductService">
+            <summary>
+            Handles CRUD operations for the Product entity
+            </summary>
+        </member>
+        <member name="M:BrainWareCore.Services.IProductService.Create(BrainWareCore.Models.IProduct)">
+            <summary>
+            Create a new Product
+            </summary>
+            <param name="p">Product to Create</param>
+            <returns>Product created</returns>
+        </member>
+        <member name="M:BrainWareCore.Services.IProductService.Read(System.Int32)">
+            <summary>
+            Reads an existing Product
+            </summary>
+            <param name="id">Id of the Product</param>
+            <returns>The Product read</returns>
+        </member>
+        <member name="M:BrainWareCore.Services.IProductService.Update(BrainWareCore.Models.IProduct)">
+            <summary>
+            Updates an existing Product
+            </summary>
+            <param name="p">Product to Update</param>
+            <returns>Id of the Product Updated</returns>
+        </member>
+        <member name="M:BrainWareCore.Services.IProductService.Delete(System.Int32)">
+            <summary>
+            Deletes an Existing Product
+            </summary>
+            <param name="id">Id of the Product to Delete</param>
+            <returns>Id of the Product Deleted</returns>
+        </member>
+        <member name="T:BrainWareCore.Services.OrderService">
+            <summary>
+            Handles operations for the Order entity
+            </summary>
+        </member>
+        <member name="M:BrainWareCore.Services.OrderService.#ctor(BrainWareCore.Data.BrainWareContext)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="dbContext">EF context for the Order entity</param>
+        </member>
+        <member name="M:BrainWareCore.Services.OrderService.Create(BrainWareCore.Models.IOrder)">
+            <summary>
+            Creates a new Order.
+            - Adds the Order
+            - Reads the Order by id from EF
+            </summary>
+            <param name="o">Order to create</param>
+            <returns>The Order created</returns>
+        </member>
+        <member name="M:BrainWareCore.Services.OrderService.Read(System.Int32)">
+            <summary>
+            Reads the Order by id from EF
+            - Calculates the total amount for the order
+            </summary>
+            <param name="id">Id of the Order</param>
+            <returns>The Order if it exists, null if not</returns>
+        </member>
+        <member name="M:BrainWareCore.Services.OrderService.Update(BrainWareCore.Models.IOrder)">
+            <summary>
+            Updates the Order passed in
+            </summary>
+            <param name="o">Order to update</param>
+            <returns>Id of the Order updated if it exists, Invalid Id if not</returns>
+        </member>
+        <member name="M:BrainWareCore.Services.OrderService.Delete(System.Int32)">
+            <summary>
+            Deletes the Order specified by the id
+            </summary>
+            <param name="id">Id of the Order to delete</param>
+            <returns>Id of the Order deleted if it exists, Invalid Id if not</returns>
+        </member>
+        <member name="M:BrainWareCore.Services.OrderService.GetOrderData(System.Int32)">
+            <summary>
+            Gets the Order from EF for the Order id specified
+            </summary>
+            <param name="id">Id of the Order</param>
+            <returns>EF Order if it exists, null if it does not</returns>
+        </member>
+        <member name="M:BrainWareCore.Services.OrderService.GetOrderProductData(System.Int32)">
+            <summary>
+            Gets a list of Orderproducts from EF for the Order id specified
+            </summary>
+            <param name="id">Id of the Order</param>
+            <returns>List of EF Orderproducts</returns>
+        </member>
+        <member name="T:BrainWareCore.Services.OrdersService">
+            <summary>
+            Handles information requests for Orders
+            </summary>
+        </member>
+        <member name="M:BrainWareCore.Services.OrdersService.#ctor(BrainWareCore.Data.BrainWareContext)">
+            <summary>
+            Constructor 
+            </summary>
+            <param name="dbContext"></param>
+        </member>
+        <member name="M:BrainWareCore.Services.OrdersService.GetOrdersByCompany(System.Int32)">
+            <summary>
+            Gets a Heirarchical list of Orders for the specified Company
+            </summary>
+            <param name="id">Company Id</param>
+            <returns>List of Orders</returns>
+        </member>
+        <member name="M:BrainWareCore.Services.OrdersService.GetOrderDetailsByCompany(System.Int32)">
+            <summary>
+            Gets a Flattened list of Order Details for the specified Company
+            </summary>
+            <param name="id">Company Id</param>
+            <returns>List of Order Details</returns>
+        </member>
+        <member name="T:BrainWareCore.Services.ProductService">
+            <summary>
+            Handles operations for the Product entity
+            </summary>
+        </member>
+        <member name="M:BrainWareCore.Services.ProductService.#ctor(BrainWareCore.Data.BrainWareContext)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="dbContext">EF context for the Product entity</param>
+        </member>
+        <member name="M:BrainWareCore.Services.ProductService.Create(BrainWareCore.Models.IProduct)">
+            <summary>
+            Creates a new Product.
+            - Adds the Product
+            - Reads the Product by id from EF
+            </summary>
+            <param name="p">Product to create</param>
+            <returns>The Product created</returns>
+        </member>
+        <member name="M:BrainWareCore.Services.ProductService.Read(System.Int32)">
+            <summary>
+            Reads the Product by id from EF
+            </summary>
+            <param name="id">Id of the Product</param>
+            <returns>The Product if it exists, null if not</returns>
+        </member>
+        <member name="M:BrainWareCore.Services.ProductService.Update(BrainWareCore.Models.IProduct)">
+            <summary>
+            Updates the Product passed in
+            </summary>
+            <param name="p">Product to update</param>
+            <returns>Id of the Product updated if it exists, Invalid Id if not</returns>
+        </member>
+        <member name="M:BrainWareCore.Services.ProductService.Delete(System.Int32)">
+            <summary>
+            Deletes the Product specified by the id
+            </summary>
+            <param name="id">Id of the Product to delete</param>
+            <returns>Id of the Product deleted if it exists, Invalid Id if not</returns>
+        </member>
+        <member name="M:BrainWareCore.Services.ProductService.GetProductData(System.Int32)">
+            <summary>
+            Gets the Product from EF for the Product id specified
+            </summary>
+            <param name="id">Id of the Product</param>
+            <returns>EF Product if it exists, null if it does not</returns>
+        </member>
+        <member name="T:BrainWareCore.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:BrainWareCore.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="configuration">Configuration information</param>
+        </member>
+        <member name="P:BrainWareCore.Startup.Configuration">
+            <summary>
+            Configuration information
+            </summary>
+        </member>
+        <member name="M:BrainWareCore.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services">Collection of services to configure</param>
+        </member>
+        <member name="M:BrainWareCore.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app">App middleware configuration</param>
+            <param name="env">Environmental information</param>
+        </member>
+    </members>
+</doc>
